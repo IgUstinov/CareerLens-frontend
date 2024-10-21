@@ -1,17 +1,15 @@
 interface JobCardProps {
     job: {
         id: string;
-        title: string;
-        company: string;
-        description: string;
+        name: string;
+        experience: string;
     };
 }
 
 const JobCard = ({ job }: JobCardProps) => (
     <div className="job-card">
-        <h2>{job.title}</h2>
-        <p>{job.company}</p>
-        <p>{job.description}</p>
+        <h2>{job.name}</h2>
+        <p>{job.experience}</p>
     </div>
 );
 
