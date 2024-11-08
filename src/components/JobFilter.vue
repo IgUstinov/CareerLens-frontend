@@ -9,9 +9,9 @@
       <label>Experience:</label>
       <select v-model="experience">
         <option value="">Any</option>
-        <option value="Junior">Junior</option>
-        <option value="Mid">Mid</option>
-        <option value="Senior">Senior</option>
+        <option value="Нет опыта">Нет опыта</option>
+        <option value="От 1 года до 3 лет">От 1 года до 3 лет</option>
+        <option value="От 3 до 6 лет">От 3 до 6 лет</option>
       </select>
   
       <button @click="applyFilter">Apply Filter</button>

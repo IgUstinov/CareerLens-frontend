@@ -1,18 +1,28 @@
 <template>
-    <div>
-      <h1>Job Analysis</h1>
-      <JobAnalysis :jobs="jobs" />
-    </div>
-  </template>
-  
-  <script>
-  import { mapState } from 'vuex';
-  import JobAnalysis from '@/components/JobAnalysis.vue';
-  
-  export default {
-    components: { JobAnalysis },
-    computed: {
-      ...mapState(['jobs']),
-    },
-  };
-  </script>  
+  <div>
+    <h1>Анализ вакансий</h1>
+    <ExperienceAnalysis :jobs="jobs" />
+    <SalaryAnalysis :jobs="jobs" />
+  </div>
+</template>
+
+<script>
+import { mapState, mapActions } from 'vuex';
+import ExperienceAnalysis from '@/components/ExperienceAnalysis.vue';
+import SalaryAnalysis from '@/components/SalaryAnalysis.vue';
+
+export default {
+  components: { ExperienceAnalysis, SalaryAnalysis },
+  computed: {
+    ...mapState(['jobs']),
+  },
+  methods: {
+    ...mapActions(['fetchJobs']),
+  },
+  mounted() {
+    if (!this.jobs || this.jobs.length === 0) {
+      this.fetchJobs(); // Получение данных при монтировании компонента
+    }
+  },
+};
+</script>
