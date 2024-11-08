@@ -1,21 +1,29 @@
 <template>
-    <div id="app">
-      <header>
-        <h1>Job Listings</h1>
-        <nav>
-          <router-link to="/">Home</router-link>
-          <router-link to="/analysis">Analysis</router-link>
-        </nav>
-      </header>
+  <v-app>
+    <v-app-bar app color="primary" dark>
+      <v-toolbar-title>CareerLens</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn text to="/">Home</v-btn>
+      <v-btn text to="/analysis">Analysis</v-btn>
+    </v-app-bar>
+
+    <v-main>
       <router-view />
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'App',
-  };
-  </script>
+    </v-main>
+
+    <v-footer app color="primary" dark>
+      <v-col class="text-center white--text">
+        © 2024 CareerLens
+      </v-col>
+    </v-footer>
+  </v-app>
+</template>
+
+<script>
+export default {
+  name: 'App',
+};
+</script>
   
   <style>
   /* Пример стилей для всего приложения */

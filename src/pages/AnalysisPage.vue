@@ -2,17 +2,17 @@
   <div>
     <h1>Анализ вакансий</h1>
     <ExperienceAnalysis :jobs="jobs" />
-    <SalaryAnalysis :jobs="jobs" />
+    <DevelopAnalysis :jobs="jobs" />
   </div>
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex';
 import ExperienceAnalysis from '@/components/ExperienceAnalysis.vue';
-import SalaryAnalysis from '@/components/SalaryAnalysis.vue';
+import DevelopAnalysis from '../components/DevelopAnalysis.vue';
 
 export default {
-  components: { ExperienceAnalysis, SalaryAnalysis },
+  components: { ExperienceAnalysis, DevelopAnalysis },
   computed: {
     ...mapState(['jobs']),
   },

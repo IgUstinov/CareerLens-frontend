@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h2>Анализ вакансий</h2>
+      <h2>По опыту</h2>
       <div v-if="chartData.datasets && chartData.datasets.length > 0">
         <BarChart :chart-data="chartData" />
       </div>

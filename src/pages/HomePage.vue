@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Job Listings</h1>
+    <h1>Список вакансий</h1>
     <JobFilter @applyFilter="applyFilter" />
     <JobList :jobs="filteredJobs" />
   </div>
