@@ -17,14 +17,20 @@ export default {
     ...mapGetters(['filteredJobs']),
   },
   methods: {
-    ...mapActions(['fetchJobs']),
+    ...mapActions(['fetchJobs', 'fetchGetJobs']),
     applyFilter(filterData) {
       this.$store.commit('setFilters', filterData);
-      this.fetchJobs(filterData);
+      console.log('filterData', filterData)
+      if (Object.keys(filterData).length === 0) {
+        console.log('Фильтров нет');
+        this.fetchGetJobs();
+      } else {
+        this.fetchJobs(filterData);
+      }
     },
   },
   mounted() {
-    this.fetchJobs();
+    this.fetchGetJobs();
   },
 };
 </script>
